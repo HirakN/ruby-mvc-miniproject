@@ -25,10 +25,12 @@ class SharksController < Sinatra::Base
 	end
 
 	# Show
-	get "sharks/:id" do
+	get "/sharks/:id" do
 		id = params[:id].to_i
 
 		@shark = Shark.find id
+
+		@title = @shark.name
 
 		erb :"sharks/show"
 	end

@@ -1,0 +1,7 @@
+<h1>Sharks</h1>	
+
+<% @sharks.each do |shark| %>
+	<div>
+		<h3><a href="/sharks/<%= shark.id %>"><%= shark.name %></a></h3>
+	</div>
+<% end %>

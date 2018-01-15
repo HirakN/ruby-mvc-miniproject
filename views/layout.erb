@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Sharks | <%= @title %></title>
+	<link rel="stylesheet" type="text/css" href="<%= url('/css/master.css') %>">
 </head>
 <body>
 	<nav>
@@ -11,5 +12,6 @@
 	
 	<%= yield %>
 	
+	<script src="<%= url('/js/app.js') %>"></script>
 </body>
 </html>

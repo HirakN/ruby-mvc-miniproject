@@ -54,6 +54,7 @@ class SharksController < Sinatra::Base
 
 	# Edit
 	get "/sharks/:id/edit" do
+		@title = "Edit"
 		id = params[:id]
 
 		@shark = Shark.find id

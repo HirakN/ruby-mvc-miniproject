@@ -1,11 +1,19 @@
 <h1><%= @shark.name %></h1>	
 
-	<div>
-		<ul>
-			<li>Database ID: <%= @shark.id %></li>
-			<li>Maximum length of shark: <%= @shark.length %></li>
-			<li>Sharks preferred habitat: <%= @shark.habitat %></li>
-			<li>Species name: <%= @shark.species %></li>
-			<li>Conservation status: <%= @shark.status %></li>
-		</ul>
-	</div>
+<div>
+	<ul>
+		<li>Database ID: <%= @shark.id %></li>
+		<li>Maximum length of shark: <%= @shark.length %></li>
+		<li>Sharks preferred habitat: <%= @shark.habitat %></li>
+		<li>Species name: <%= @shark.species %></li>
+		<li>Conservation status: <%= @shark.status %></li>
+	</ul>
+</div>
+
+<a href="/sharks/<%= @shark.id %>/edit">edit</a>
+
+<!-- Delete button -->
+<form action="/sharks/<%= @shark.id %>" method="POST">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete">
+</form> 

@@ -1,6 +1,22 @@
 class Shark
 	attr_accessor :id, :name, :length, :species, :habitat, :status
 
+	def save
+		conn = Shark.open_connection
+
+		# If object doesnt have an id (so doesnt exist in db)
+		if(!self.id) 
+			# Insert a new record in to the database
+			sql = "INSERT INTO sharks (name, length, species, habitat, status) VALUES ( '#{self.name}', #{self.length}, '#{self.species}', '#{self.habitat}', '#{self.status}')"
+		else 
+			# Update an existing one
+			sql = "UPDATE sharks SET name='#{self.name}', length= #{self.length}, species ='#{self.species}', habitat ='#{self.habitat}', status ='#{self.status}' WHERE id = #{self.id}"
+		end
+
+		conn.exec(sql)
+
+	end
+
 	def self.open_connection
 		conn = PG.connect( dbname: 'blog')
 	end
@@ -33,6 +49,17 @@ class Shark
 	    shark = self.hydrate sharks[0]
 
 	    shark
+
+	end
+
+	def self.destroy id
+
+		conn = self.open_connection
+
+		# Delete entry where passed in parameter is the id
+		sql = "DELETE FROM sharks where id = #{id}"
+
+		conn.exec(sql)
 
 	end
 

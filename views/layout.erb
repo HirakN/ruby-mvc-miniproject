@@ -2,7 +2,9 @@
 <html>
 <head>
 	<title>Sharks | <%= @title %></title>
+	<link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative:400,700" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="<%= url('/css/master.css') %>">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 </head>
 <body>
 	<nav>
@@ -10,7 +12,9 @@
 		<a href="/sharks/new">New</a>
 	</nav>
 	
-	<%= yield %>
+	<div>
+		<%= yield %>
+	</div>
 	
 	<script src="<%= url('/js/app.js') %>"></script>
 </body>

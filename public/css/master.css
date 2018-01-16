@@ -1,0 +1,31 @@
+* {
+	font-family: 'Cinzel Decorative', cursive;
+	font-weight: 400;
+}
+
+h1 {
+	font-weight: bold;
+}
+
+body {
+	background: url('../images/background.jpg');
+	background-size: 100%;
+	margin: 0px;
+}
+
+nav {
+	background-color: black;
+	padding: 10px 20px;
+	width: 20%;
+	margin: 0 auto;
+}
+
+nav a {
+	color: white;
+	padding-right: 30px;
+	text-decoration: none;
+}
+
+nav a:hover {
+	color: yellow;
+}

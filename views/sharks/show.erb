@@ -10,7 +10,9 @@
 	</ul>
 </div>
 
-<a href="/sharks/<%= @shark.id %>/edit">edit</a>
+<div id="edit">
+	<a href="/sharks/<%= @shark.id %>/edit">edit</a>
+</div>
 
 <!-- Delete button -->
 <form action="/sharks/<%= @shark.id %>" method="POST">
